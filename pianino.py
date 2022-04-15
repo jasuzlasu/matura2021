@@ -1,5 +1,7 @@
 from winsound import Beep
-
+import keyboard
+from pynput.keyboard import Key, Listener
+import pygame
 OKTAWA = {'c': 261.6,
           'd': 293.7,
           'e': 329.6,
@@ -37,5 +39,20 @@ def main() -> None:
     graj_wlazl_kotek(UTWOR)
 
 
+def main_2():
+    while True:
+        keys = pygame.key.get_pressed()
+        if (keys[pygame.K_LEFT]):
+            Beep(440, 50)
+        elif (keys[pygame.K_RIGHT]):
+            Beep(600, 50)
+        elif (keys[pygame.K_UP]):
+            Beep(400, 50)
+        elif (keys[pygame.K_DOWN]):
+            Beep(550, 50)
+
+
+
 if __name__ == '__main__':
-    main()
+    # main()
+    main_2()
